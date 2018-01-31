@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Yuan&#39;s Blog">
 <meta property="og:description" content="The following list is hint for setup Mac. Continuing adding.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T00:09:02.000Z">
+<meta property="og:updated_time" content="2018-01-31T00:23:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Setup List">
 <meta name="twitter:description" content="The following list is hint for setup Mac. Continuing adding.">
@@ -339,6 +339,8 @@
 <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>I tred a lot of time to download Git from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git-SCM</a>, but never successed. So I changed to use <code>homebrew</code> to install git instead.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure></p>
 <h2 id="NPM-Nodejs"><a href="#NPM-Nodejs" class="headerlink" title="NPM (Nodejs)"></a>NPM (Nodejs)</h2><p>NPM cannot install itself, it can be installed by <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Nodejs</a>.</p>
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>I use <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> to setup my <a href="http://gu-yuan.top">Blog</a>, and using GitHub to store my blog.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br></pre></td></tr></table></figure></p>
+<p>For I am using Git for this blog, so need to use hexo git deploy toolkit.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>and then setup <code>_config.yml</code> in <em>deploy</em> block<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/guyuanershi/guyuanershi.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <h2 id="Fira-Code"><a href="#Fira-Code" class="headerlink" title="Fira Code"></a>Fira Code</h2><p>I’d like to use <code>Fira Code</code>, it gives some nice symbol, such as &gt;=,<br>Download from <a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener">here</a></p>
 <p>Open <code>Font Book</code> and select the download <code>Fira Code</code> (.otf, .ttf)</p>
 <h2 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h2><p>There are a lot editor, but for me <code>Vim</code> and <code>VScode</code> is enough.<br>Download from here: <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a></p>
