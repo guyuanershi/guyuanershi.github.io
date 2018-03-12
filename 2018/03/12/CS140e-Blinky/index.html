@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="CS140e,Rust," />
 
 
 
@@ -94,18 +94,21 @@
 
 
 
-<meta name="description" content="It is a good practice to use virtualenv to setup independent pythoon envirnoment. Especially, there are multi-version of python this machine.For details check here">
-<meta name="keywords" content="Python">
+<meta name="description" content="CS140e是斯坦福大学开设的一门编写操作系统的课程。这个课不同于其他的软件课程，是需要在硬件上搞真的事情。对我来说比较感兴趣的方面很多：  了解操作系统的一些原理 因为几乎没有在“板子”上开发过东西，所以很好奇 硬件软件之间的联系之类的 ：）） 这门课程将用Rust来写程序。Rust是我偶然不知道在哪里看到的，一个新的语言，其目的就是要做一个操作系统的开发语言。 最有意思的是，这门课将用树莓派3">
+<meta name="keywords" content="CS140e,Rust">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Using Virtualenv">
-<meta property="og:url" content="gu-yuan.top/2018/01/31/Using-virtualenv/index.html">
+<meta property="og:title" content="CS140e-Blinky">
+<meta property="og:url" content="gu-yuan.top/2018/03/12/CS140e-Blinky/index.html">
 <meta property="og:site_name" content="Yuan&#39;s Blog">
-<meta property="og:description" content="It is a good practice to use virtualenv to setup independent pythoon envirnoment. Especially, there are multi-version of python this machine.For details check here">
+<meta property="og:description" content="CS140e是斯坦福大学开设的一门编写操作系统的课程。这个课不同于其他的软件课程，是需要在硬件上搞真的事情。对我来说比较感兴趣的方面很多：  了解操作系统的一些原理 因为几乎没有在“板子”上开发过东西，所以很好奇 硬件软件之间的联系之类的 ：）） 这门课程将用Rust来写程序。Rust是我偶然不知道在哪里看到的，一个新的语言，其目的就是要做一个操作系统的开发语言。 最有意思的是，这门课将用树莓派3">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-07T08:15:00.942Z">
+<meta property="og:image" content="/2018/03/12/CS140e-Blinky/PI_Board.png">
+<meta property="og:image" content="/2018/03/12/CS140e-Blinky/LED.png">
+<meta property="og:updated_time" content="2018-03-12T14:35:40.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Using Virtualenv">
-<meta name="twitter:description" content="It is a good practice to use virtualenv to setup independent pythoon envirnoment. Especially, there are multi-version of python this machine.For details check here">
+<meta name="twitter:title" content="CS140e-Blinky">
+<meta name="twitter:description" content="CS140e是斯坦福大学开设的一门编写操作系统的课程。这个课不同于其他的软件课程，是需要在硬件上搞真的事情。对我来说比较感兴趣的方面很多：  了解操作系统的一些原理 因为几乎没有在“板子”上开发过东西，所以很好奇 硬件软件之间的联系之类的 ：）） 这门课程将用Rust来写程序。Rust是我偶然不知道在哪里看到的，一个新的语言，其目的就是要做一个操作系统的开发语言。 最有意思的是，这门课将用树莓派3">
+<meta name="twitter:image" content="/2018/03/12/CS140e-Blinky/PI_Board.png">
 
 
 
@@ -134,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="gu-yuan.top/2018/01/31/Using-virtualenv/"/>
+  <link rel="canonical" href="gu-yuan.top/2018/03/12/CS140e-Blinky/"/>
 
 
 
 
 
-  <title>Using Virtualenv | Yuan's Blog</title>
+  <title>CS140e-Blinky | Yuan's Blog</title>
   
 
 
@@ -263,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="gu-yuan.top/2018/01/31/Using-virtualenv/">
+    <link itemprop="mainEntityOfPage" href="gu-yuan.top/2018/03/12/CS140e-Blinky/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yuan Gu">
@@ -280,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Using Virtualenv</h1>
+          <h1 class="post-title" itemprop="name headline">CS140e-Blinky</h1>
         
 
         <div class="post-meta">
@@ -292,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T11:08:44+08:00">
-                2018-01-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T22:35:40+08:00">
+                2018-03-12
               </time>
             
 
@@ -330,17 +333,58 @@
       
 
       
-        <p>It is a good practice to use virtualenv to setup independent pythoon envirnoment. Especially, there are multi-version of python this machine.<br>For details check <a href="https://virtualenv.pypa.io/en/stable/" target="_blank" rel="noopener">here</a></p>
-<a id="more"></a>
-<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>Using Pip (&gt;1.3) install<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ [sudo] pip install virtualenv</span><br></pre></td></tr></table></figure></p>
-<h2 id="Using"><a href="#Using" class="headerlink" title="Using"></a>Using</h2><ol>
-<li>Create a folder for this env (trying to setup a python2.7 env)<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir py27env</span><br><span class="line">$ <span class="built_in">cd</span> py27env</span><br></pre></td></tr></table></figure></li>
-<li>Create virtualenv for python2.7, in my mac the python27 is located at <code>/usr/bin/python2.7</code><br>thus a virtualenv is created with then name (folder) <code>py27env</code> by python2.7<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ virtualenv --python=/usr/bin/python2.7 py27env</span><br></pre></td></tr></table></figure></li>
-<li>Active the env<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> py27env</span><br><span class="line">$ <span class="built_in">source</span> bin/activate</span><br></pre></td></tr></table></figure>
-Then you can see the shell prompt is changed, py27env is added to the shell prompt<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(py27env) C02NF73EG3QD:py27env guyu$</span><br></pre></td></tr></table></figure></li>
-<li>Leave the env<br>Run the following script under the env <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ deactivate</span><br></pre></td></tr></table></figure>
-if you want to clean all the env, then you can remove the folder<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ rm -r path/to/env</span><br></pre></td></tr></table></figure></li>
+        <p>CS140e是斯坦福大学开设的一门编写操作系统的课程。这个课不同于其他的软件课程，是需要在硬件上搞真的事情。<br>对我来说比较感兴趣的方面很多：</p>
+<ol>
+<li>了解操作系统的一些原理</li>
+<li>因为几乎没有在“板子”上开发过东西，所以很好奇 硬件软件之间的联系之类的 ：））</li>
+<li>这门课程将用Rust来写程序。Rust是我偶然不知道在哪里看到的，一个新的语言，其目的就是要做一个操作系统的开发语言。</li>
+<li>最有意思的是，这门课将用树莓派3（RaspBerry PI3）作为硬件，而我刚好有个，还没想好做些什么，就可以直接用的这门课上。<a id="more"></a>
+</li>
 </ol>
+<p>起始第一个任务是做一个小东西让LED灯不停的闪烁。<br>首先我们要准备好需要的硬件：</p>
+<ol>
+<li>Raspberry PI 3</li>
+<li>EL-CK-002 Electonic Fun Kit Bundle with Breadboard Cable Resistor (一个套装包含了所有东西，淘宝可买)</li>
+<li>CP2102 USB TTL485 TTL232 Adaptor （用来连接电脑和树莓派, 具体的就是USB装TTL232）</li>
+</ol>
+<h2 id="烤派-（准备硬件）"><a href="#烤派-（准备硬件）" class="headerlink" title="烤派 （准备硬件）"></a>烤派 （准备硬件）</h2><p>首先要安装CP2102驱动，否则在Mac上无法识别<a href="https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip" target="_blank" rel="noopener">下载地址</a>.<br>然后在<code>/dev</code>下检查是否有<code>/dev/tty.SLAB_USBtoUART</code>.</p>
+<p>接下来就要认识下树莓派的板子和CP2102的板子，各个脚都是什么，树莓派和CP2102相互怎么接。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">CP2102 Pin</th>
+<th style="text-align:left">Pi Physical Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+5v</td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left">GND</td>
+<td style="text-align:left">6</td>
+</tr>
+<tr>
+<td style="text-align:left">RXD</td>
+<td style="text-align:left">8</td>
+</tr>
+<tr>
+<td style="text-align:left">TXD</td>
+<td style="text-align:left">10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="读GPIO的文档"><a href="#读GPIO的文档" class="headerlink" title="读GPIO的文档"></a>读GPIO的文档</h2><p>GPIO - General Propersal Input/Ouput. GPIO是一种通用的通过高低电平向设备输入/输出的电子针脚。一个GPIO引脚可以是输入也可以是输出，这个是根据设置的电平高低决定的。<br>树莓派的板子图如下：<br><img src="/2018/03/12/CS140e-Blinky/PI_Board.png" title="RaspBerry PI 3 Board"></p>
+<p>连接LED到板子上<br><img src="/2018/03/12/CS140e-Blinky/LED.png" title="Connect LED with PI board"></p>
+<p>OK。接下来就是如何让程序和硬件进行通信了。首先我们要理解一些概念：</p>
+<ul>
+<li>一个引脚对应一个内存地址，我们就是要在这个内存地址上赋值，什么值就对应相应的功能</li>
+<li>一个内存地址是32位（PI3），所以每一位都有对应这一种开关</li>
+</ul>
+<p>此例：<br>我们用<code>GPIO16(FSEL16)</code>，通过查文档<a href="https://web.stanford.edu/class/cs140e/docs/BCM2837-ARM-Peripherals.pdf" target="_blank" rel="noopener">BCM2837 89页</a>。可以知道其对应得寄存器为<code>register1</code>，<code>register1</code>相应的内存地址为<code>0x7E200004(GPFSEL1)</code>。(PI3用的是BCM2835，其物理地址是从<code>0x3F000000</code>开始)。<br>所以首先我们要把<code>register1</code>设置成<code>GPIO16</code>打开状态：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(volatile unsigned *)(0x3F000000 + 0x200000 + 0x04) = 1 &lt;&lt; 18; //左移18位</span><br></pre></td></tr></table></figure><br>写内存为<code>*(地址)=value</code>, register1<code>的18-20位为</code>GPIO16<code>的位置(3bit)，而</code>001`设成output状态。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>把写好的程序make一下，然后把编译好的<code>blinky.bin</code>改成<code>kernel8.img</code>拷贝到PI，插入USB就可以看到LED闪烁了。</p>
+<h2 id="rust-code"><a href="#rust-code" class="headerlink" title="rust code"></a>rust code</h2><p>把相应的C代码改为rust code做相同的操作，得到一致的结果。<br>rust从地址读写用下面的方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const A: *mut u32 = 0x12 as *mut u32; // 地址0x12</span><br><span class="line">A.read_volatile();                    // 读A的值</span><br><span class="line">A.write_volatile();                   // 写A的值</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -358,7 +402,9 @@ if you want to clean all the env, then you can remove the folder<figure class="h
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/CS140e/" rel="tag"># CS140e</a>
+          
+            <a href="/tags/Rust/" rel="tag"># Rust</a>
           
         </div>
       
@@ -371,8 +417,8 @@ if you want to clean all the env, then you can remove the folder<figure class="h
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/25/mac-setup-list/" rel="next" title="Mac Setup List">
-                <i class="fa fa-chevron-left"></i> Mac Setup List
+              <a href="/2018/02/11/LeetCode-Array/" rel="next" title="LeetCode::Array">
+                <i class="fa fa-chevron-left"></i> LeetCode::Array
               </a>
             
           </div>
@@ -380,10 +426,6 @@ if you want to clean all the env, then you can remove the folder<figure class="h
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/11/LeetCode-Array/" rel="prev" title="LeetCode::Array">
-                LeetCode::Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,7 +550,7 @@ if you want to clean all the env, then you can remove the folder<figure class="h
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using"><span class="nav-number">2.</span> <span class="nav-text">Using</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#烤派-（准备硬件）"><span class="nav-number">1.</span> <span class="nav-text">烤派 （准备硬件）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读GPIO的文档"><span class="nav-number">2.</span> <span class="nav-text">读GPIO的文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rust-code"><span class="nav-number">4.</span> <span class="nav-text">rust code</span></a></li></ol></div>
             
 
           </div>
