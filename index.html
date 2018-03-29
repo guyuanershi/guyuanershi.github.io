@@ -260,6 +260,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="gu-yuan.top/2018/03/29/update-jenkins-ssl-certificate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuan Gu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/29/update-jenkins-ssl-certificate/" itemprop="url">Update Jenkins SSL Certificate</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T14:40:33+08:00">
+                2018-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Just write something down here. Because I spent a lot of time to figure this out. And fininally, it is so simple~~~~</p>
+<p>##Windows<br>At first, download the cert file from the CA center. There are a lot of types of CA, here I use <code>.PFX</code>(PKCS#12) for example.</p>
+<p>Go to the <code>keytool.exe</code> path (<code>%PROGRAMFILES{x86)%/Jenkins/jre/bin/</code>) and using the following cmd.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ keytool -importkeystore -srckeystore &lt;path-to-cert-file.pfx&gt; -srcstoretype pkcs12 -destkeystore jenkins.example.com.jks -deststoretype JKS</span><br></pre></td></tr></table></figure>
+<p>Then copy the jks file to the Jenkins secret path (<code>%PROGRAMFILES{x86)%/Jenkins/secrets</code>).<br>Then modify the jenkins.xml (<code>%PROGRAMFILES{x86)%/Jenkins/jenkins.xml</code>)<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--httpPort=-1  (to stop Jenkins from listening over plain HTTP)</span><br><span class="line">--httpsPort=443  (or 8443 or whatever SSL port you want Jenkins to listen on)</span><br><span class="line">--httpsKeyStore=<span class="string">"%JENKINS_HOME%\jenkins.example.com.jks"</span></span><br><span class="line">--httpsKeyStorePassword=<span class="string">"&lt;cleartext-password-to-keystore&gt;"</span></span><br></pre></td></tr></table></figure></p>
+<p>At last,<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ net stop jenkins</span><br><span class="line">$ net start jenkins</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>So it also can tranform other type to keystore by choicing <code>-srcstoretype</code><br><code>keytool</code> is a java’s keytool</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="gu-yuan.top/2018/03/12/CS140e-Blinky/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -794,7 +922,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
